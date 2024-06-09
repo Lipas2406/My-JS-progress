@@ -12,7 +12,7 @@ umaString = "Um \\texto";
 //           01234567
 umaString = "Um texto";
 // console.log (umaString[4]);
-// console.log (umaString.charAt(6));
+// console.log (umaString.charAt(10));
 
 
 
@@ -27,13 +27,13 @@ umaString = "Um texto";
 
 /**Sobre localizar index */
 //           01234567
-umaString = "Um texto";
+umaString = "Um texto 9m111m";
 // console.log (umaString.indexOf('texto'));
 // console.log (umaString.indexOf('Texto'));
 // console.log (umaString.indexOf('U', 3));
 // console.log (umaString.indexOf('o', 3));
 
-//console.log (umaString.lastIndexOf('m', 3));
+// console.log (umaString.lastIndexOf('m', 11));
 
 
 
@@ -66,5 +66,5 @@ umaString = "O rato roeu a roupa do rei de roma.";
 
 /**Sobre maiúscula e minúscula */
 umaString = "O rato roeu a roupa do rei de roma.";
-console.log (umaString.toUpperCase());
-console.log (umaString.toLowerCase());
+// console.log (umaString.toUpperCase());
+// console.log (umaString.toLowerCase());
