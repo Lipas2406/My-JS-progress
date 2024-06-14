@@ -3,10 +3,11 @@
 
 // -> também indexad, mas por ítem
 //               0       1        2
-const alunos = ['Luiz', 'Maria', 'João']; 
+let alunos = ['Luiz', 'Maria', 'João']; 
+alunos = 123;
 
 console.log(typeof  alunos);
-console.log(alunos);
+console.log(alunos instanceof Array);
 
 
 
