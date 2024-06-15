@@ -1,7 +1,7 @@
 //Arrays = 'lista de coisas'
 
 
-// -> também indexad, mas por ítem
+// -> também indexados, mas por ítem
 //               0       1        2
 let alunos = ['Luiz', 'Maria', 'João']; 
 alunos = 123;
