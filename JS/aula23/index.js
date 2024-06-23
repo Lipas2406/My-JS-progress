@@ -39,4 +39,4 @@ const c = 'false'; //-> é uma string, logo tem um valor (false)
 const d = false;
 const e = NaN; //-> se aquela não fosse uma string, esse NaN seria retornado por ser o último
 
-console.log (a || b || c || d || e)
+console.log (a || b || c || d || e);
