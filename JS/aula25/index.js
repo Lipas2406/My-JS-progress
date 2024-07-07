@@ -42,4 +42,5 @@ if (numero >= 0 && numero <= 5 && Number.isInteger(numero / 2) && numero ** 2 >=
     console.log('O número NÃO está entre 0 e 5 e NÃO está entre 4 e 6, mas é divisível por 2'); // 3 ou 1
 } else {
     console.log('Não atende a qualquer um dos requisitos: O número NÃO está entre 0 e 5, NÃO é divisível por 2 e NÃO está entre 4 e 6'); // 7 ou outros números primos
-} 
+}  
+ 

@@ -35,10 +35,16 @@ body {
     padding: 2rem;
 }
 
-form input, form label, form button {
+form input, form button {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 form input {
@@ -64,10 +70,46 @@ form button {
 
 form button:hover {
     background-color: var(--secundary-color);
-    transition: all 300ms ease-in-out;
+    transition: 100ms ease-in-out;
 }
 
 form button:active {
-    background-color: white;
+    background-color: rgb(141, 187, 250);
     transform: scale(1.05);
+    transition: all 50ms ease-in-out;
+}
+
+
+
+
+.infos {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+}
+
+.tabela li, .imc li{
+    min-width: 28rem;
+    line-height: 1.5rem;
+    margin: 0.8rem 0;
+    margin-left: -4rem;
+}
+
+
+
+
+.resultado {
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+.paragrafo-resultado {
+    background-color: rgb(127, 255, 172);
+    padding: 1rem 2rem;
+}
+
+.bad {
+    background-color: rgb(246, 135, 105);
+    padding: 1rem 2rem;
 }
