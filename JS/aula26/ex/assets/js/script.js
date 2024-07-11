@@ -21,7 +21,7 @@ function meuEscopo () {
         const imc = getImc(peso, altura);
         const nivelImc = classificaIMC(imc); 
 
-        const msg = `<p>Seu IMC é ${imc} que é ${nivelImc}`;
+        const msg = `Seu IMC é ${imc} que é ${nivelImc}`;
 
         setResultado(msg, true);
 });
