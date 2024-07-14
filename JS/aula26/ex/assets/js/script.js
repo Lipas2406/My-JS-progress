@@ -52,7 +52,7 @@ function setResultado (msg, isValid) {
 
     
     const p = criaP();
-
+ 
     if (isValid) {
         p.classList.add('paragrafo-resultado');
     } else {
