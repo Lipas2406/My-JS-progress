@@ -27,6 +27,12 @@ body {
     line-height: 1.5rem;
 }
 
+
+
+h2 {
+    font-size: small;
+}
+
 .container {
     margin: 2rem auto;
     max-width: 60rem;
