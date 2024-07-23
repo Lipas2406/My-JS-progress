@@ -83,3 +83,35 @@ function ePaisagem () {
 ePaisagem();
 
 
+
+// *Exercício 3
+
+// Escreva uma função que recebe um número e retorne o seguinte:
+// Número é divisível por 3 = Fizz
+// Número é divisível por 5 = Buzz
+// Número é divisível por 3 e 5 = FizzBuzz  
+// Número NÃO é divisível por 3 e 5 = Retorna o próprio número
+// Checar se o número é realmente um número = Retorna o próprio número
+// Use a função com números de 0 a 100
+
+const numbers = Array.from({ length: 101 }, (_, i) => i);
+numbers.forEach(fizz);
+numbers.forEach(buzz);
+numbers.forEach(fizzBuzz);
+
+
+const fizz = (number) => Number.isInteger(number / 3) ? 'Fizz' : number;
+const buzz = (number) => Number.isInteger(number / 5) ? 'Buzz' : number;
+const fizzBuzz = (number) => Number.isInteger(number / 15) ? 'FizzBuzz' : number;
+
+function checkNumber(number) {
+    if (fizzBuzz(number) === 'FizzBuzz') {
+        return 'FizzBuzz';
+    } else if (fizz(number) === 'Fizz') {
+        return 'Fizz';
+    } else if (buzz(number) === 'Buzz') {
+        return 'Buzz';
+    } else return number;
+}
+
+

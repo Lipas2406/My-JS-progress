@@ -16,26 +16,16 @@ const numeros = [ 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // }
 
-let i = 0;
-while (i < numeros.length) {
-    let numero = numeros[i];
+const getRandomNumber = () => Math.floor(Math.random() * 101);
 
-    if (numero === 2) {
-        console.log('Pulei o 2');
-        i++;
-        continue;
-    }
-
-    console.log(numero);
-
-    if (numero === 7) {
-        console.log('Número encontrado, obrigado. ')
-        i++;
-        break;
-    }
-
-    i++;
+function generateNumbers() {
+    const randomNumber = getRandomNumber();
+    console.log(randomNumber);
+    return randomNumber;
 }
+
+// Testando a função
+generateNumbers();
 
 
 // continue -> continua para a próxima interação
