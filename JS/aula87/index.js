@@ -7,8 +7,13 @@ function aleatorio(min, max) {
 function esperaAi(msg, tempo) {
     return new Promise((resolve, reject) => { 
     setTimeout(() => {
-        if(typeof msg !== 'string') return reject('BAD VALUE');
+        if(typeof msg !== 'string') {
+            reject('BAD VALUE')
+            return;
+        };
+
         resolve(msg.toUpperCase() + ' - Passei na promise!');
+        return;
     }, tempo);
     });
 }
