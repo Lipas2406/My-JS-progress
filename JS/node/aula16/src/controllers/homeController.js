@@ -20,7 +20,7 @@ HomeModel.find()
 exports.paginaInicial = (req, res) => {
     console.log(req.flash('info'), req.flash('error'), req.flash('success'));
     res.render('index', {
-        // titulo: 'Este será o título da página',
+        titulo: 'Eu sou top!', 
         numeros: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 ]
     });
     return;

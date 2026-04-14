@@ -46,8 +46,8 @@ app.use(midddlewareGlobal);
 app.use(routes);
 
 app.on('pronto', () => {
-    app.listen(3000, () => {
-        console.log('Acessar http://localhost:3000');
-        console.log('Servidor executando na porta 3000');
+    app.listen(4000, () => {
+        console.log('Acessar http://localhost:4000');
+        console.log('Servidor executando na porta 4000');
     });
 });
