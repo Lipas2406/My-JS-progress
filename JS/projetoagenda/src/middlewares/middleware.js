@@ -4,10 +4,9 @@ exports.midddlewareGlobal = (req, res, next) => {
 };
 
 exports.checkCsrfError = (err, req, res, next) => {
-    if (err && err.code === 'EBADCSRFTOKEN') {
-        return res.status(403).render('includes/404');
+    if (err) {
+        return res.status(403).render('404');
     }
-    return next(err);
 };
 
 exports.csrfMiddleware = (req, res, next) => {
@@ -15,11 +14,11 @@ exports.csrfMiddleware = (req, res, next) => {
     next();
 };
 
-exports.csrfSafeMiddleware = (req, res, next) => {
-  try {
-    res.locals.csrfToken = req.csrfToken ? req.csrfToken() : '';
-  } catch {
-    res.locals.csrfToken = '';
-  }
-  next();
-};
+// exports.csrfSafeMiddleware = (req, res, next) => {
+//   try {
+//     res.locals.csrfToken = req.csrfToken ? req.csrfToken() : '';
+//   } catch {
+//     res.locals.csrfToken = '';
+//   }
+//   next();
+// };
