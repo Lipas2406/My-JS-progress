@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
+    console.log('Banco conectado:', mongoose.connection.name);
     app.emit('pronto');
   })
   .catch(e => console.log(e));
@@ -40,10 +41,12 @@ app.set('view engine', 'ejs');
 
 app.use(csrf());
 // Nossos próprios middlewares
+
 app.use(middlewareGlobal);
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);
+
 
 app.on('pronto', () => {
   app.listen(3000, () => {

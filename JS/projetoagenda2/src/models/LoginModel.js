@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcryptjs = require('bcryptjs');
 
 const LoginSchema = new mongoose.Schema({
   email: { type: String, required: true },
@@ -18,10 +19,27 @@ class Login {
   async register() {
     this.valida();
     if (this.errors.length > 0) return;
+
+    await this.userExists();
+
+    if (this.errors.length > 0) return;
+
+    const salt = bcryptjs.genSaltSync();
+    this.body.password = bcryptjs.hashSync(this.body.password, salt);
+
     try {
       this.user = await LoginModel.create(this.body);
     } catch (e) {
+      this.errors.push('Erro ao salvar o usuário. Tente novamente.');
       console.error(e);
+    }
+  }
+
+  async userExists() {
+    const user = await LoginModel.findOne({ email: this.body.email });
+    if (user) {
+      this.errors.push('E-mail já cadastrado');
+      return;
     }
   }
 
@@ -30,9 +48,9 @@ class Login {
 
     if (!this.body.email) this.errors.push('E-mail é um campo obrigatório'); else {
       if (!validator.isEmail(this.body.email)) this.errors.push('E-mail inválido');
-      if (!this.body.password) this.errors.push('Senha é um campo obrigatório'); else {
-        if (this.body.password.length < 3 || this.body.password.length > 50) { this.errors.push('A senha precisa ter entre 3 e 50 caracteres'); }
-      }
+    }
+    if (!this.body.password) this.errors.push('Senha é um campo obrigatório'); else {
+      if (this.body.password.length < 3 || this.body.password.length > 50) { this.errors.push('A senha precisa ter entre 3 e 50 caracteres'); }
     };
   }
 
