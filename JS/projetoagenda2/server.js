@@ -17,7 +17,16 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
-app.use(helmet());
+// O CSP padrão do helmet só aceita script do próprio servidor ('self'),
+// o que bloqueia o bootstrap.bundle.min.js do CDN e mata o menu hambúrguer.
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      'script-src': ["'self'", 'https://cdn.jsdelivr.net'],
+    },
+  },
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
