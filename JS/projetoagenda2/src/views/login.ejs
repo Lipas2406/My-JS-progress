@@ -16,8 +16,14 @@
           <div class="col-lg">
             <h4>Faça seu cadastro</h4>
             <p>Se você ainda não tem uma conta, crie uma agora:</p>
-            <form action="/login/register" method="POST">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>">>
+
+            <% if(contato._id) { %>
+              <form action="/login/edit/<%= contato._id %>" method="POST">
+              <% } else { %>
+
+                <% } %>
+
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <div class="form-group">
                 <label>Seu e-mail</label>
                 <input type="email" class="form-control" name="email">
@@ -30,12 +36,14 @@
 
               <button type="submit" class="btn btn-primary">Criar minha conta</button>
             </form>
+
+
           </div>
           <div class="col-lg">
             <h4>Faça seu login</h4>
             <p>Se você já tem uma conta, faça login agora:</p>
             <form action="/login/login" method="POST">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>">>
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <div class="form-group">
                 <label>Seu e-mail</label>
                 <input type="email" class="form-control" name="email">
