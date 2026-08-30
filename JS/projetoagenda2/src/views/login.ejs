@@ -17,12 +17,7 @@
             <h4>Faça seu cadastro</h4>
             <p>Se você ainda não tem uma conta, crie uma agora:</p>
 
-            <% if(contato._id) { %>
-              <form action="/login/edit/<%= contato._id %>" method="POST">
-              <% } else { %>
-
-                <% } %>
-
+              <form action="/login/register" method="POST">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <div class="form-group">
                 <label>Seu e-mail</label>

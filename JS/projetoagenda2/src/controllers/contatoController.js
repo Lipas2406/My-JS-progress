@@ -58,7 +58,7 @@ exports.edit = async (req, res) => {
             return;
         }
 
-        req.flash('success', 'Contato atualizado com sucesso.');
+        req.flash( 'success', 'Contato atualizado com sucesso.');
         req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`));
     } catch (error) {
         console.error(error);
