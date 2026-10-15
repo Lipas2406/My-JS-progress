@@ -51,3 +51,19 @@ sudo poweroff
 - Trabalhar pelo SSH em vez da janela da VM (copiar e colar funciona).
 - Instalar o Node dentro da VM e subir um servidor simples, alcançando pelo navegador do Windows com
   outro redirecionamento de porta.
+
+## Sessão de 14/10/2026: esqueci o login e a senha
+
+Eu vi muitas coisas. O Ubuntu é um negócio estranho, difícil e confuso de mexer, mas deu bom.
+
+- Eu tinha esquecido o login e a senha, mas com o GRUB eu redescobri o login e resetei a senha, e
+  deu certo. Tive que reiniciar tudo, tipo as configurações avançadas do Windows.
+- Passei pelo Recovery Mode e pedi um `root` pra resetar com `passwd`.
+
+```bash
+# no Recovery Mode, opção root
+mount -o remount,rw /
+ls /home
+passwd USUARIO
+reboot
+```
