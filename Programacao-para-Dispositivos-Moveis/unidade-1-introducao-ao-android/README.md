@@ -33,4 +33,5 @@ de métodos de callback executados em uma ordem específica:
 3. `onResume()`
 4. `onPause()`
 5. `onStop()`
-6. `onDestroy()`
+6. `onRestart()`
+7. `onDestroy()`
